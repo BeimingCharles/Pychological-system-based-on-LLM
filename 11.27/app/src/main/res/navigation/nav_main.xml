@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/chatFragment">
+
+    <fragment
+        android:id="@+id/mineFragment"
+        android:name="com.example.test.fragment.MineFragment"
+        android:label="MineFragment"
+        tools:layout="@layout/fragment_mine">
+        <action
+            android:id="@+id/action_mineFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_mineFragment_to_chatRecordFragment"
+            app:destination="@id/chatRecordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.test.fragment.SettingFragment"
+        android:label="SettingFragment"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/action_settingFragment_to_aboutAppFragment"
+            app:destination="@id/aboutAppFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.test.fragment.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat"/>
+    <fragment
+        android:id="@+id/testchoiceFragment"
+        android:name="com.example.test.fragment.TestChoiceFragment"
+        android:label="TestChoiceFragment"
+        tools:layout="@layout/fragment_test_choice2"/>
+    <fragment
+        android:id="@+id/chatRecordFragment"
+        android:name="com.example.test.fragment.ChatRecordFragment"
+        android:label="ChatRecordFragment"
+        tools:layout="@layout/fragment_chat_record"/>
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.example.test.fragment.AboutAppFragment"
+        android:label="fragment_about_app"
+        tools:layout="@layout/fragment_about_app" />
+</navigation>
