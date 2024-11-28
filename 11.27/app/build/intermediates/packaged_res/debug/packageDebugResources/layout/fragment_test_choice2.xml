@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="健康状态"
+        android:layout_marginLeft="140dp"
+        android:textSize="30dp"
+
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/q1"
+        android:layout_below="@+id/title1"
+        android:layout_height="100dp" >
+        <ImageButton
+            android:id="@+id/Ibnph"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:src="@drawable/baseline_send_24"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/name"
+            android:layout_toRightOf="@+id/Ibnph"
+            android:gravity="center"
+            android:text="健康状况"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/name"
+            android:layout_toRightOf="@+id/Ibnph"
+            android:id="@+id/jkzt"
+            android:text="    健康状况"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:id="@+id/kscs"
+            android:layout_marginLeft="224dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@+id/Ibnph"
+            android:text="开始测试" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/see"
+
+        android:layout_below="@+id/q1"
+        android:layout_height="100dp" >
+        <ImageButton
+            android:id="@+id/Ibnp"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:src="@drawable/baseline_send_24"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/hhh"
+            android:layout_toRightOf="@+id/Ibnp"
+            android:gravity="center"
+            android:text="健康状况"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/hhh"
+            android:layout_toRightOf="@+id/Ibnp"
+            android:id="@+id/jkz"
+            android:text="    健康状况"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hhh"
+            android:id="@+id/kss"
+            android:layout_marginLeft="224dp"
+            android:layout_marginTop="19dp"
+            android:layout_toRightOf="@+id/Ibnp"
+            android:text="开始测试" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/questions"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/see"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/six"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:gravity="center|bottom"
+        android:orientation="horizontal"
+        android:weightSum="3" />
+</RelativeLayout>
