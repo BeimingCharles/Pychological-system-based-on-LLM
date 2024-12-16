@@ -17,5 +17,4 @@
         android:id="@+id/mineFragment"
         android:icon="@drawable/mine"
         android:title="我的" />
-
 </menu>

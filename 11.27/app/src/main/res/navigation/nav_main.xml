@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/chatFragment">
+    app:startDestination="@id/homePageFragment">
 
     <fragment
         android:id="@+id/mineFragment"
@@ -46,4 +46,9 @@
         android:name="com.example.test.fragment.AboutAppFragment"
         android:label="fragment_about_app"
         tools:layout="@layout/fragment_about_app" />
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.test.fragment.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
 </navigation>
