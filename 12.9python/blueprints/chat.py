@@ -18,6 +18,9 @@ def formal_chat():
         用户输入：{ct}
         
         """)
+        # ans=get(f"""
+        # 用户的输入为{ct}        
+        # """)
     else:
         better=Search.extract_and_find_entities(ct)
         if(better=="没有匹配到实体"):
