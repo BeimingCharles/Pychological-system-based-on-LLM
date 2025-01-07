@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Generator</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Graph Visualization</h1>
+
+<!-- 搜索框和按钮 -->
+<input type="text" id="searchTerm" placeholder="Enter search term" />
+<button onclick="search()">Search</button>
+
+<!-- 图表显示区域 -->
+<div id="graph"></div>
+
+<script>
+    // 发起请求到后端并更新图表
+    function search() {
+        var searchTerm = document.getElementById("searchTerm").value;
+
+        $.ajax({
+            url: 'http://localhost:8080/generateGraph', // Java 后端接口
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ query: searchTerm }), // 发送搜索词
+            success: function(response) {
+                updateGraph(response);
+            },
+            error: function(error) {
+                console.log("Error:", error);
+            }
+        });
+    }
+
+    // 更新图表
+    function updateGraph(data) {
+        // 清空现有图表
+        d3.select("#graph").html("");
+
+        var width = 800, height = 600;
+        var svg = d3.select("#graph").append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+
+        var nodes = data.nodes;
+        var links = data.links;
+
+        var simulation = d3.forceSimulation(nodes)
+            .force("link", d3.forceLink(links).id(d => d.id).distance(100))
+            .force("charge", d3.forceManyBody().strength(-200))
+            .force("center", d3.forceCenter(width / 2, height / 2));
+
+        var link = svg.append("g")
+                      .selectAll(".link")
+                      .data(links)
+                      .enter().append("line")
+                      .attr("class", "link");
+
+        var node = svg.append("g")
+                      .selectAll(".node")
+                      .data(nodes)
+                      .enter().append("circle")
+                      .attr("class", "node")
+                      .attr("r", 10)
+                      .style("fill", "blue");
+
+        node.append("title")
+            .text(d => d.name);
+
+        // 刷新图表位置
+        simulation.on("tick", function() {
+            link.attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            node.attr("cx", d => d.x)
+                .attr("cy", d => d.y);
+        });
+    }
+</script>
+</body>
+</html>

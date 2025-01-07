@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/chatFragment"
+        android:icon="@drawable/chat"
+        android:title="聊天" />
+
+    <item
+        android:id="@+id/testchoiceFragment"
+        android:icon="@drawable/test"
+        android:title="测试" />
+
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/search"
+        android:title="查询" />
+
+
+    <item
+        android:id="@+id/mineFragment"
+        android:icon="@drawable/account"
+        android:title="我的"/>
+
+</menu>
