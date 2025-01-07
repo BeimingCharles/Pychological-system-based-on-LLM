@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/chatFragment">
+
+    <fragment
+        android:id="@+id/mineFragment"
+        android:name="com.example.test.fragment.MineFragment"
+        android:label="MineFragment"
+        tools:layout="@layout/fragment_mine">
+        <action
+            android:id="@+id/action_mineFragment_to_accountSecurityFragment"
+            app:destination="@id/accountSecurityFragment" />
+        <action
+            android:id="@+id/action_mineFragment_to_aboutAppFragment"
+            app:destination="@id/aboutAppFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.test.fragment.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragment_to_chatRecordFragment"
+            app:destination="@id/chatRecordFragment" />
+        <action
+            android:id="@+id/action_chatFragment_to_questionnaireresultFragment"
+            app:destination="@id/questionnaireresultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testchoiceFragment"
+        android:name="com.example.test.fragment.TestChoiceFragment"
+        android:label="TestChoiceFragment"
+        tools:layout="@layout/fragment_test_choice2">
+        <action
+            android:id="@+id/action_testchoiceFragment_to_testResponseFragment"
+            app:destination="@id/testResponseFragment" />
+        <action
+            android:id="@+id/action_testchoiceFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatRecordFragment"
+        android:name="com.example.test.fragment.ChatRecordFragment"
+        android:label="ChatRecordFragment"
+        tools:layout="@layout/fragment_chat_record"/>
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.example.test.fragment.AboutAppFragment"
+        android:label="fragment_about_app"
+        tools:layout="@layout/fragment_about_app" />
+    <fragment
+        android:id="@+id/testResponseFragment"
+        android:name="com.example.test.fragment.TestResponseFragment"
+        android:label="TestResponseFragment"
+        tools:layout="@layout/fragment_test_response">
+        <action
+            android:id="@+id/action_testResponseFragment_to_testchoiceFragment"
+            app:destination="@id/testchoiceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionnaireresultFragment"
+        android:name="com.example.test.fragment.QuestionnaireResultFragment"
+        android:label="fragment_questionnaire_result"
+        tools:layout="@layout/fragment_questionnaire_result"/>
+    <fragment
+        android:id="@+id/accountSecurityFragment"
+        android:name="com.example.test.fragment.AccountSecurityFragment"
+        android:label="fragment_account_security"
+        tools:layout="@layout/fragment_account_security" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.test.fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+</navigation>
