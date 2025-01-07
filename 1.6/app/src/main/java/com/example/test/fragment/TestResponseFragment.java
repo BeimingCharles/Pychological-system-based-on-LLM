@@ -150,49 +150,56 @@ public class TestResponseFragment extends Fragment {
             layout1.addView(radioGroup);
 
             radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-                // Find the RadioButton that was checked
-                View checkedRadioButton =getView().findViewById(checkedId);
+                // 查找选中的 RadioButton
+                View checkedRadioButton = getView().findViewById(checkedId);
                 Drawable currentDrawable = checkedRadioButton.getBackground();
-                int Width1 = checkedRadioButton.getWidth();
-                int Height1 = checkedRadioButton.getHeight();
 
+                // 改变选中项的背景
                 if (currentDrawable.getConstantState().equals(ContextCompat.getDrawable(getActivity(), R.drawable.cleckk).getConstantState())) {
-                    // If the current icon is solid_hook_right, set a different icon
                     checkedRadioButton.setBackgroundResource(R.drawable.solid_hook_left);
                 } else if(currentDrawable.getConstantState().equals(ContextCompat.getDrawable(getActivity(), R.drawable.cleckmid).getConstantState())){
-                    // If the icon is not solid_hook_right, set it to solid_hook_right
                     checkedRadioButton.setBackgroundResource(R.drawable.solid_hook_mid);
-                }else{
+                } else {
                     checkedRadioButton.setBackgroundResource(R.drawable.solid_hook_right);
                 }
 
-                for(int k=0;k<radioGroup.getChildCount();k++){
-                    RadioButton radioButton=(RadioButton) radioGroup.getChildAt(k);
-
-                    if(radioGroup.getVisibility()!=View.GONE && radioButton.getId()==checkedId){
-                        int selected=checkedId;
-                        count++;
-                        selected = selected - ((click_count + 1) * (tata- 1) + 1);
-                        toal+=selected;
-                        tata++;
-
+                // 更新父布局的透明度
+                for (int k = 0; k < radioGroup.getChildCount(); k++) {
+                    RadioButton radioButton = (RadioButton) radioGroup.getChildAt(k);
+                    if (radioGroup.getVisibility() != View.GONE && radioButton.getId() == checkedId) {
+                        // 强制刷新
+                        radioButton.setAlpha(1f);  // 如果需要，可以调整透明度
                     }
                 }
 
-                // Get the parent row layout
+                // 计算并更新总分
+                int selected = checkedId - ((click_count + 1) * (tata - 1) + 1);
+                toal += selected;
+                tata++;
+
+                // 设置透明度并滚动
                 RelativeLayout parentRowLayout = (RelativeLayout) (checkedRadioButton.getParent().getParent());
-
-
-                //设置透明度0.4
                 for (int ii = 0; ii < parentRowLayout.getChildCount(); ii++) {
                     View childView = parentRowLayout.getChildAt(ii);
-                    childView.setAlpha(0.4f); // Set transparency to 40%
+                    childView.setAlpha(0.4f);
                 }
 
-                // Scroll to the row
-                scrollView1.post(() -> scrollView1.smoothScrollTo(0, parentRowLayout.getTop()));
-            });
+                // 自动滚动到下一个问题
+                int nextPosition = tata; // 下一道题的索引
+                if (nextPosition < ovee) { // 确保下一题存在
+                    // 获取下一个问题的 RelativeLayout
+                    RelativeLayout nextRowLayout = (RelativeLayout) parentLayout.getChildAt(nextPosition * 2);
+                    Log.i("NextPosition", "Next layout: " + nextRowLayout);
 
+                    // 执行滚动
+                    scrollView1.post(() -> {
+                        // 计算目标位置
+                        int targetY = nextRowLayout.getTop();
+                        Log.i("Scroll", "TargetY: " + targetY);  // 打印目标位置
+                        scrollView1.smoothScrollTo(0, targetY); // 滚动到下一道题
+                    });
+                }
+            });
             parentLayout.addView(layout1);
 
         }
