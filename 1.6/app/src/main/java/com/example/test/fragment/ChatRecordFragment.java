@@ -20,6 +20,7 @@ import com.example.test.Database.ChatRecordDatabase;
 import com.example.test.R;
 import com.example.test.adapter.MessageAdapter;
 import com.example.test.my_tools.Message;
+import com.example.test.my_tools.Migrations;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -62,7 +63,8 @@ public class ChatRecordFragment extends Fragment {
         llm.setStackFromEnd(false);  // 设置为false，让新的消息出现在顶部
         recyclerView.setLayoutManager(llm);
 
-        DB = Room.databaseBuilder(requireContext(), ChatRecordDatabase.class, "peopleDB")
+        DB = Room.databaseBuilder(requireContext(), ChatRecordDatabase.class, "ChatRecordDB")
+                .addMigrations(Migrations.MIGRATION_1_3)  // 添加迁移
                 .allowMainThreadQueries()
                 .build();
 
