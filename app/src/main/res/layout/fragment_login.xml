@@ -26,16 +26,28 @@
             app:layout_constraintStart_toStartOf="@+id/editTextAccount"
             app:layout_constraintTop_toBottomOf="@+id/editTextAccount" />
 
-        <Button
-            android:id="@+id/buttonLogin"
-            android:layout_width="120dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="34dp"
-            android:text="@string/button_message"
-            app:layout_constraintBottom_toTopOf="@+id/textView7"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cb_check" />
+<!--        <Button-->
+<!--            android:id="@+id/buttonLogin"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginBottom="34dp"-->
+<!--            android:text="@string/button_message"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/textView7"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/cb_check" />-->
+
+            <Button
+                android:id="@+id/buttonLogin"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/button_message"
+                app:layout_constraintBottom_toTopOf="@+id/textView7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cb_check"
+                app:layout_constraintWidth_percent="0.6" />
 
         <EditText
             android:id="@+id/editTextAccount"
@@ -88,19 +100,34 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+<!--        <TextView-->
+<!--            android:id="@+id/textView7"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="6dp"-->
+<!--            android:layout_marginBottom="37dp"-->
+<!--            android:clickable="true"-->
+<!--            android:minHeight="48dp"-->
+<!--            android:text="如果没有注册，请点击"-->
+<!--            android:textStyle="italic"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/textView6"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/buttonLogin"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />-->
+
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
+            android:layout_marginTop="2dp"
             android:layout_marginBottom="37dp"
             android:clickable="true"
             android:minHeight="48dp"
             android:text="如果没有注册，请点击"
             android:textStyle="italic"
-            app:layout_constraintBottom_toTopOf="@+id/textView6"
-            app:layout_constraintEnd_toEndOf="@+id/buttonLogin"
-            app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/textView6" />
 
         <CheckBox
             android:id="@+id/cb_check"

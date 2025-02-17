@@ -12,7 +12,7 @@ public class Constants {
 //    public static final String IP = "http://10.0.2.2:6671"; // 或者是实际的服务器 IP 地址
    // GetIPAddress ip=new GetIPAddress();
 //    public static  String IP = "http://192.168.43.37:6671";
-    public static  String IP = "http://192.168.31.159:6671";
+    public static  String IP = "http://192.168.10.83:6671";
 //    static {
 //        GetIPAddress ipGetter = new GetIPAddress();
 //        String ipAddress = ipGetter.open(); // 调用 open 方法获取 IP 地址
