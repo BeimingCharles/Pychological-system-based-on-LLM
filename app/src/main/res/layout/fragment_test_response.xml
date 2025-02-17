@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/yywz"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="抑郁测试"
+        android:textSize="30dp"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/ywwz"
+        android:layout_below="@+id/yywz"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Depression Test"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tpwz"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/ywwz"
+        android:layout_centerInParent="true"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:lineSpacingExtra="2dp"
+        android:layout_marginLeft="10dp"
+        android:text="做你自己，诚实回答，找出你的性格类型" />
+
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/ywwz"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="-40dp"
+        android:layout_toLeftOf="@+id/tpwz"
+        android:alpha="0.5"
+        android:background="@drawable/openjp" />
+
+    <TextView
+        android:id="@+id/第三框"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/tpwz"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:lineSpacingExtra="2dp"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text="了解你的性格类型" />
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/tpwz"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="-40dp"
+        android:layout_toLeftOf="@+id/tpwz"
+        android:alpha="0.5"
+        android:background="@drawable/openjp" />
+
+    <TextView
+        android:id="@+id/第四框"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/第三框"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:lineSpacingExtra="2dp"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:text="从左到右程度依次递增" />
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/第三框"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="-40dp"
+        android:layout_toLeftOf="@+id/tpwz"
+        android:alpha="0.5"
+        android:background="@drawable/openjp" />
+
+<!--问卷内容-->
+<!--    <ScrollView-->
+<!--        android:id="@+id/scrollView1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="500dp"-->
+<!--        android:layout_above="@+id/two"-->
+<!--        android:layout_below="@+id/第四框"-->
+<!--        android:layout_marginTop="3dp"-->
+<!--        android:layout_marginBottom="-5dp"-->
+<!--        android:fillViewport="true">-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:id="@+id/unique"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+
+<!--        </LinearLayout>-->
+
+
+
+<!--    </ScrollView>-->
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_above="@+id/two"
+        android:layout_below="@+id/第四框"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/unique"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/two"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+
+        >
+        <Button
+            android:id="@+id/first"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:text="提交" />
+
+        <Button
+            android:id="@+id/second"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:text="退出" />
+
+    </LinearLayout>
+
+</RelativeLayout>
