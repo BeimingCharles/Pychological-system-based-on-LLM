@@ -17,11 +17,11 @@ class Config:
 
 # 数据库连接配置
 class DatabaseConfig(Config):
-    HOSTNAME = '47.121.189.213'  # 数据库主机地址
-    PORT = '3306'  # 数据库端口
-    DATABASE = 'cstest'  # 数据库名称
-    USERNAME = 'CStest'  # 数据库用户名
-    PASSWORD = 'LfD2YfYnkAn7NaLd'  # 数据库密码
+    HOSTNAME = os.environ.get('DB_HOST', '127.0.0.1')  # 数据库主机地址
+    PORT = os.environ.get('DB_PORT', '3306')  # 数据库端口
+    DATABASE = os.environ.get('DB_NAME', 'test_db')  # 数据库名称
+    USERNAME = os.environ.get('DB_USER', 'root')  # 数据库用户名
+    PASSWORD = os.environ.get('DB_PASSWORD', 'your_password_here')  # 数据库密码
 
     # 动态构建数据库连接字符串
     SQLALCHEMY_DATABASE_URI = "mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8".format(
@@ -32,12 +32,12 @@ class DatabaseConfig(Config):
 # 环境配置（你可以根据不同的环境创建不同的配置类）
 class DevelopmentConfig(DatabaseConfig):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://CStest:LfD2YfYnkAn7NaLd@47.121.189.213:3306/cstest?charset=utf8"  # 开发环境数据库
+    # SQLALCHEMY_DATABASE_URI 会继承 DatabaseConfig 中的动态构建
 
 class ProductionConfig(DatabaseConfig):
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://CStest:LfD2YfYnkAn7NaLd@47.121.189.213:3306/cstest?charset=utf8"  # 生产环境数据库
+    # SQLALCHEMY_DATABASE_URI 会继承 DatabaseConfig 中的动态构建
 
 class TestingConfig(DatabaseConfig):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://CStest:LfD2YfYnkAn7NaLd@47.121.189.213:3306/cstest?charset=utf8"  # 测试环境数据库
+    # SQLALCHEMY_DATABASE_URI 会继承 DatabaseConfig 中的动态构建
